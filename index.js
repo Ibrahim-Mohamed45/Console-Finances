@@ -90,3 +90,12 @@ var finances = [
 var Total_Months = finances.length
 
 console.log("Total Months: " + Total_Months)
+
+var Total = 0
+for (let i = 0; i < finances.length; i++) {
+    Total = Total + finances[i][1];
+}
+
+console.log("Total: " + new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP' }).format(Total));
+
+  

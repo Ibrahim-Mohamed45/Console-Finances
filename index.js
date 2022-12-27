@@ -72,3 +72,11 @@ console.log("Average Change: " + new Intl.NumberFormat('en-US', { style: 'curren
 console.log("Greatest Increase in Profits: " + Greatest_Increase_Date + " (" + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Increase) + ")" ) ;
 
 console.log("Greatest Decrease in Profits: " + Greatest_Fall_Date + " (" + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Fall) + ")" ) ;
+
+const TotMon = document.querySelector('.TotMon');
+const Tot = document.querySelector('.Tot');
+const AvgCng = document.querySelector('.AvgCng');
+const GrtInc = document.querySelector('.GrtInc');
+const GrtDrc = document.querySelector('.GrtDrc');
+
+TotMon.textContent = `Total Months: ${Total_Months}`;

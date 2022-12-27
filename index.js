@@ -80,3 +80,7 @@ const GrtInc = document.querySelector('.GrtInc');
 const GrtDrc = document.querySelector('.GrtDrc');
 
 TotMon.textContent = `Total Months: ${Total_Months}`;
+Tot.textContent = `Total: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Net_P_L)}`;
+AvgCng.textContent = `Average Change: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Average_Change)}`;
+GrtInc.textContent = `Greatest Increase in Profits: ${Greatest_Increase_Date} (${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Increase)})`
+GrtDrc.textContent = `Greatest Decrease in Profits: ${Greatest_Fall_Date} (${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Fall)})`

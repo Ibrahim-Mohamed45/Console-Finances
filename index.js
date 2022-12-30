@@ -1,3 +1,4 @@
+// DATASET 
 var finances = [
     ['Jan-2010', 867884], ['Feb-2010', 984655], ['Mar-2010', 322013],
     ['Apr-2010', -69417], ['May-2010', 310503], ['Jun-2010', 522857],
@@ -30,27 +31,30 @@ var finances = [
     ['Jan-2017', 138230], ['Feb-2017', 671099]
 ];
 
-console.log("Financial Analysis");
-console.log("---------------------------------");
-
+// Total months equals array length.
 var Total_Months = finances.length
 
-console.log("Total Months: " + Total_Months)
-
+// Using a for loop to calculate the total profits or losses over the array.
 var Net_P_L = 0
 for (let i = 0; i < finances.length; i++) {
     Net_P_L = Net_P_L + finances[i][1];
 }
 
-console.log("Total: " + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Net_P_L));
-
+// A variable that stores the previous profit/loss in the loop.
 var Old_Month_P_L = 0;
+// A variable that stores the current profit/loss in the loop.
 var Current_Month_P_L = 0;
+// A variable that stores the difference between last months profit/loss and this month
 var Change = 0;
+// A variable that accumlates the change in profit/loss from month to month in the array. 
 var Total = 0;
+// A variable that stores the biggest increase in profits in the loop.
 var Greatest_Increase = 0;
+// A variable that stores the biggest decrease in profits in the loop.
 var Greatest_Fall = 0;
+// A variable that stores the month the biggest increase occurs in the loop.
 var Greatest_Increase_Date;
+// A variable that stores the month the biggest decrease occurs in the loop.
 var Greatest_Fall_Date;
 
 for (var i = 1; i < finances.length; i++) {
@@ -68,20 +72,32 @@ for (var i = 1; i < finances.length; i++) {
     }
 }
 
+// Average change calculated using formula provided.
 var Average_Change = Total / (Total_Months - 1);
+
+// Console messages
+console.log("Financial Analysis");
+console.log("---------------------------------");
+
+console.log("Total Months: " + Total_Months)
+
+console.log("Total: " + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Net_P_L));
 
 console.log("Average Change: " + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Average_Change));
 
-console.log("Greatest Increase in Profits: " + Greatest_Increase_Date + " (" + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Increase) + ")" ) ;
+console.log("Greatest Increase in Profits: " + Greatest_Increase_Date + " (" + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Increase) + ")");
 
-console.log("Greatest Decrease in Profits: " + Greatest_Fall_Date + " (" + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Fall) + ")" ) ;
+console.log("Greatest Decrease in Profits: " + Greatest_Fall_Date + " (" + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Greatest_Fall) + ")");
 
+// DOM
+// variables
 var TotMon = document.querySelector('#TotMon');
 var Tot = document.querySelector('#Tot');
 var AvgCng = document.querySelector('#AvgCng');
 var GrtInc = document.querySelector('#GrtInc');
 var GrtDrc = document.querySelector('#GrtDrc');
 
+// DOM application
 TotMon.textContent = `Total Months: ${Total_Months}`;
 Tot.textContent = `Total: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Net_P_L)}`;
 AvgCng.textContent = `Average Change: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Average_Change)}`;

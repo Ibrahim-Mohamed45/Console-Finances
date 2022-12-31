@@ -34,6 +34,7 @@ The live website looks like this:
 <img src="Assets\Finances-Website.png" alt="Image of what the website should look like.">
 
 The console log should looks like this:
+<br />
 <img src="Assets\Console-log.png" alt="Image of what the console log should look like.">
 
 ## Installation

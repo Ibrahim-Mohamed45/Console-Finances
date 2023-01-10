@@ -97,6 +97,7 @@ var AvgCng = document.querySelector('#AvgCng');
 var GrtInc = document.querySelector('#GrtInc');
 var GrtDrc = document.querySelector('#GrtDrc');
 
+
 // DOM application
 TotMon.textContent = `Total Months: ${Total_Months}`;
 Tot.textContent = `Total: ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Net_P_L)}`;
